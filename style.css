@@ -1,0 +1,433 @@
+/* Réglage de la taille de police de base et des marges pour tout le document */
+
+html {
+    font-size: calc(12px + 0.390625vw);
+    /* Taille de police dynamique selon la largeur de la fenêtre */
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/* Styles de base pour le corps du document */
+
+body {
+    background-color: #ffffff;
+    /* Définir la couleur de fond */
+    font-family: "Century Gothic", Helvetica;
+    /* Police de caractères */
+    margin: 0;
+    /* Supprimer la marge par défaut */
+}
+
+
+/* Styles pour l'élément principal, souvent utilisé pour le contenu principal */
+
+main {
+    padding: 15px;
+    /* Ajouter du rembourrage autour du contenu */
+    background-color: #f3f3f3;
+    /* Couleur de fond pour différencier de body */
+}
+
+
+/* Classes utilitaires pour l'alignement du texte */
+
+.text-center {
+    text-align: center;
+    /* Centrer le texte */
+}
+
+.text-justify {
+    text-align: justify;
+    /* Justifier le texte */
+}
+
+
+/* Style pour indiquer les champs obligatoires dans un formulaire */
+
+.champobligatoire {
+    text-transform: lowercase;
+    /* Mettre le texte en minuscules */
+    font-size: small;
+    /* Taille de police réduite */
+}
+
+
+/* Styles par défaut pour les paragraphes */
+
+p {
+    text-transform: none;
+    /* Aucune transformation du texte */
+    font-size: medium;
+    /* Taille de police moyenne */
+    margin-left: 10px;
+    /* Marges pour aligner le texte à gauche */
+}
+
+
+/* Styles pour les titres h1 et h2 */
+
+h1 {
+    font-size: 1.8rem;
+    /* Taille de police pour h1 */
+}
+
+h2 {
+    font-size: 1.5rem;
+    /* Taille de police pour h2 */
+    margin-left: 10px;
+    /* Marges pour aligner le texte à gauche */
+    color: rgb(5, 3, 0);
+    /* Couleur du texte */
+}
+
+
+/* == HEADER == */
+
+
+/* Styles spécifiques pour l'en-tête */
+
+header {
+    background-color: rgb(255, 255, 255);
+    /* Couleur de fond */
+}
+
+
+/* Navbar */
+
+
+/* Styles pour la barre de navigation dans l'en-tête */
+
+header .navbar {
+    display: flex;
+    /* Utiliser Flexbox pour l'alignement */
+    justify-content: center;
+    /* Centrer les éléments horizontalement */
+    align-items: center;
+    /* Centrer les éléments verticalement */
+    background-color: black;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    padding: 5px 5px;
+    /* Rembourrage autour des éléments */
+}
+
+
+/* Style pour l'élément actif dans la navbar */
+
+header .navbar span.active {
+    font-weight: 600;
+    /* Rendre le texte plus gras */
+    color: #ec7035;
+    /* Couleur du texte pour l'élément actif */
+}
+
+
+/* Styles pour les liens dans la navbar */
+
+header .navbar a {
+    color: white;
+    /* Couleur du texte */
+    text-decoration: none;
+    /* Supprimer le soulignement */
+}
+
+
+/* Styles pour les liens au survol */
+
+header .navbar a:hover {
+    text-decoration: underline;
+    /* Ajouter un soulignement */
+    font-weight: 600;
+    /* Rendre le texte plus gras */
+}
+
+
+/* Ajouter un séparateur entre les éléments de la navbar */
+
+header .navbar .navitem:not(:last-child):not(:first-child)::after {
+    content: ' | ';
+    /* Contenu du séparateur */
+    color: white;
+    /* Couleur du séparateur */
+    font-weight: 100;
+    /* Poids de la police */
+}
+
+
+/* Style pour les conteneurs flexibles */
+
+.flex-container {
+    display: flex;
+    /* Activer Flexbox */
+}
+
+.flex-child {
+    flex: 1;
+    /* Distribuer l'espace également entre les enfants */
+}
+
+.flex-child:not(:last-child) {
+    padding-right: 20px;
+    /* Ajouter un rembourrage à droite sauf pour le dernier enfant */
+}
+
+
+/* Styles pour les formulaires */
+
+label {
+    font-weight: 900;
+    /* Rendre le texte très gras */
+    text-transform: uppercase;
+    /* Mettre le texte en majuscules */
+    font-size: 0.8em;
+    /* Réduire la taille de la police */
+    color: #ec7035;
+    /* Couleur du texte */
+}
+
+label.radio-label {
+    font-weight: normal;
+    /* Rétablir le poids normal de la police */
+    text-transform: none;
+    /* Pas de transformation de texte */
+    color: black;
+    /* Couleur du texte */
+}
+
+
+/* Styles pour les champs de saisie, les zones de sélection et les zones de texte */
+
+input,
+select,
+textarea {
+    font-family: "Century Gothic", Helvetica;
+    /* Police de caractères */
+    border: 0;
+    /* Supprimer la bordure */
+    padding: 8px 5px;
+    /* Ajouter du rembourrage */
+    margin-top: 5px;
+    /* Ajouter une marge en haut */
+    border-radius: 8px;
+    /* Arrondir les coins */
+}
+
+
+/* Styles spécifiques pour les fieldsets "Entreprise" et "Représentant" */
+
+fieldset[name="Entreprise"],
+fieldset[name="Représentant"] {
+    text-transform: uppercase;
+    /* Mettre le texte en majuscules */
+    font-weight: 900;
+    /* Rendre le texte très gras */
+}
+
+textarea {
+    resize: none;
+    /* Empêcher le redimensionnement */
+}
+
+
+/* Style pour les boutons radio */
+
+input[type="radio"] {
+    accent-color: rgb(192, 86, 42);
+    /* Couleur de l'accentuation (non supporté par certains navigateurs) */
+}
+
+
+/* Styles pour les conteneurs flexibles avec espacement et alignement spécifiques */
+
+.flex-container {
+    display: flex;
+    /* Activer Flexbox */
+    justify-content: space-between;
+    /* Répartir l'espace entre les éléments */
+    align-items: flex-start;
+    /* Aligner les éléments au début */
+    gap: 20px;
+    /* Définir un espacement entre les éléments */
+}
+
+
+/* Styles pour les fieldsets */
+
+fieldset {
+    width: calc(50% - 10px);
+    /* Calculer la largeur en tenant compte de l'espacement */
+    border: 1px solid #dcdcdc;
+    /* Couleur de la bordure */
+    border-radius: 0;
+    /* Supprimer les coins arrondis */
+}
+
+
+/* Styles pour les boutons */
+
+button {
+    font-family: "Century Gothic", Helvetica;
+    /* Police de caractères */
+    text-transform: uppercase;
+    /* Mettre le texte en majuscules */
+    border-radius: 4px;
+    /* Arrondir les coins */
+    text-decoration: none;
+    /* Supprimer le soulignement */
+    transition: background-color 300ms ease 0s, color 300ms ease 0s;
+    /* Animer le changement de couleur */
+    cursor: pointer;
+    /* Changer le curseur en pointeur */
+    display: inline-flex;
+    /* Afficher comme flex inline */
+    justify-content: center;
+    /* Centrer le contenu */
+    padding: 8px 15px;
+    /* Ajouter du rembourrage */
+}
+
+
+/* Styles spécifiques pour le bouton de réinitialisation */
+
+button[type="reset"] {
+    background-color: white;
+    /* Couleur de fond */
+    color: black;
+    /* Couleur du texte */
+    border: 1px solid currentcolor;
+    /* Bordure de la couleur du texte */
+}
+
+
+/* Styles pour le bouton de réinitialisation au survol */
+
+button[type="reset"]:hover {
+    background-color: rgb(244, 246, 247);
+    /* Changer la couleur de fond */
+}
+
+
+/* Styles spécifiques pour le bouton de soumission */
+
+button[type="submit"] {
+    background-color: #ec7035;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    font-weight: 600;
+    /* Rendre le texte plus gras */
+    border: 1px solid transparent;
+    /* Bordure transparente */
+}
+
+
+/* Styles pour le bouton de soumission au survol */
+
+button[type="submit"]:hover {
+    background-color: rgb(192, 86, 42);
+    /* Changer la couleur de fond */
+}
+
+
+/* Styles pour les questions fréquentes */
+
+.question h1 {
+    font-size: 18px;
+    /* Taille de police pour le titre */
+    margin-bottom: 5px;
+    /* Marge en bas */
+    margin-left: 15px;
+    /* Marge à gauche */
+    font-weight: bold;
+    /* Rendre le texte gras */
+}
+
+.question p {
+    font-size: 16px;
+    /* Taille de police pour le paragraphe */
+    line-height: 1.2;
+    /* Hauteur de ligne */
+    margin-top: -5px;
+    /* Marge en haut */
+    margin-bottom: 0.5em;
+    /* Marge en bas */
+    margin-left: 15px;
+    /* Marge à gauche */
+    font-style: italic;
+    /* Style de police en italique */
+}
+
+.text-v2 {
+    text-decoration: none;
+    /* Supprimer le soulignement */
+}
+
+
+/* == MEDIA QUERIES == */
+
+
+/* Styles responsifs pour différentes tailles d'écrans */
+
+
+/* Pour les ordinateurs de bureau avec résolution supérieure à 1281px */
+
+@media (min-width: 1281px) {
+    /* Styles spécifiques */
+}
+
+
+/* Pour les ordinateurs portables et de bureau entre 1025px et 1280px */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    /* Styles spécifiques */
+}
+
+
+/* Pour les tablettes en mode portrait entre 768px et 1024px */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .flex-container {
+        display: block;
+        /* Changer l'affichage en bloc pour les petits écrans */
+    }
+}
+
+
+/* Pour les tablettes en mode paysage entre 768px et 1024px */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .flex-container {
+        display: block;
+        /* Changer l'affichage en bloc pour les petits écrans */
+    }
+}
+
+
+/* Pour les tablettes et mobiles en mode paysage entre 481px et 767px */
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .flex-container {
+        display: block;
+        /* Changer l'affichage en bloc pour les petits écrans */
+    }
+    header .navbar .navitem {
+        display: block;
+        /* Afficher chaque élément de navigation sur sa propre ligne */
+    }
+    header .navbar .navitem:not(:last-child)::after {
+        content: '';
+        /* Supprimer le séparateur */
+    }
+}
+
+
+/* Pour la plupart des smartphones en mode portrait entre 320px et 479px */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .flex-container {
+        display: block;
+        /* Changer l'affichage en bloc pour les petits écrans */
+    }
+}

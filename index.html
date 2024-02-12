@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Facturation</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h2>Module de Facturation</h2>
+        <p>Cette page vous permet de nous soumettre vos informations de facturation</p>
+        <div class="navbar">
+            <nav class="navbar"><span class="navitem"></span><span class="navitem"><a href="Informations.html">Informations</a></span><span class="navitem"><a href="FAQ.html">F.A.Q</a></span><span class="navitem"><a href="contact.html">Nous Contacter</a></nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <form>
+                <h1>Informations de facturation</h1>
+                <div class="fournisseur-container">
+                    <label for="fournisseur-select">FOURNISSEUR</label>
+                    <select id="fournisseur-select" name="fournisseur">
+                    <option value="Fournisseur 1">Fournisseur 1</option>
+                    <option value="Fournisseur 2">Fournisseur 2</option>
+                    <option value="Fournisseur 3">Fournisseur 3</option>
+                </select>
+                </div><br>
+                <div class="flex-container">
+
+                    <fieldset name="Entreprise">
+                        <legend>Entreprise</legend>
+                        <label for="nomS">Société</label><br>
+                        <input type="text" placeholder="Nom de la société" id="nomS" name="nomS" size="50"><br><br>
+                        <label for="TVA">N° TVA</label><br>
+                        <input type="text" placeholder="TVA" id="TVA" name="TVA"><br><br>
+                        <label for="adresse">Adresse</label><br>
+                        <textarea placeholder="Adresse complète" name="adresse" rows="5" cols="50"></textarea><br><br>
+                        <label for="code_postal">Code postal</label><br>
+                        <input type="text" id="code_postal" name="code_postal" placeholder="CP" size="10"><br><br>
+                        <label for="ville">ville</label><br>
+                        <input type="text" id="ville" placeholder="Nom de la ville" name="ville">
+                    </fieldset>
+
+                    <fieldset name="Représentant">
+                        <legend>Représentant</legend>
+                        <label for="Genre">Genre</label><br>
+                        <input type="radio" id="homme" name="genre" value="homme" checked="checked">
+                        <label class="radio-label" for="homme">Homme</label>
+                        <input type="radio" id="femme" name="genre" value="femme">
+                        <label class="radio-label" for="femme">Femme</label>
+                        <input type="radio" id="autres" name="genre" value="autres">
+                        <label class="radio-label" for="autres">Autres</label>
+                        <br>
+                        <br><label for="nomSre">Nom*</label><br>
+                        <input type="text" placeholder="Nom de famille" id="nomSre" name="nomSre" required><br><br>
+                        <label for="TVA">Prénom*</label><br>
+                        <input type="text" placeholder="Prénom" id="prenom" name="prenom" required><br><br>
+                        <label for="courriel">Courriel</label><br>
+                        <input type="text" id="code_postal" name="code_postal" placeholder="E-mail"><br><br>
+                        <label for="ville">Téléphone</label><br>
+                        <input type="tel" id="phone" name="phone" onkeypress="return onlyNumbers(event)" placeholder="Téléphone"><br>
+                    </fieldset>
+
+                    </div>
+                    <br>
+
+                <label>Commentaires<br><textarea placeholder="Information supplémentaire à nous faire parvenir." name="feedbacks" rows="5" cols="100"></textarea></label>
+                <div><p class="champobligatoire">* Champs obligatoire</p></div><br>
+                <button type="submit">Envoyer</button>&nbsp;<button type="reset">Réinitialiser</button>
+
+                <h1>Qestions fréquentes</h1>
+                <div class="question">
+                    <h1>Mon fournisseur n'appararît pas dans ma liste déroulante, comment faire ?</h1>
+                    <p>Sélectionnez "Autres" dans la liste déroulante puis indiquez-nous le nom de votre fournisseur dans le champs "Commentaires".</p>
+                    <h1>Quel est le délai de réponse ?</h1>
+                    <p>Nos équipes traitent votre demande au plus vite. Vous obtiendrez généralement une réponse sous 48h (jours ouvrés).</p>
+                    <h1>J'ai une question, comment vous contacter ?</h1>
+                    <p class="text-justify">Vous pouvez utiliser notre <a href="formulaire.html">formulaire de contact</a> ou ou nous envoyer directement un mail à <a href="mailto:Alexandre.ilestbeau@c'estvrai.fr">info@mycompagny.com</a></p>
+                </div><br>
+
+                <p class="text-v2">ce n'est pas fini ! <a href="v2.html">une V2 ?</a></p>
+        </form>
+    </main>
+    </div>
+</body>
+
+</html>
