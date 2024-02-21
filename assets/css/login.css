@@ -1,0 +1,206 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 1.75rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.813rem;
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body,
+input,
+button {
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+}
+
+body {
+    color: var(--white-color);
+    background-image: url("../img/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+/*=============== BODY ===============*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 512px;
+    height: 512px;
+    overflow: hidden;
+    /* border: 2px solid var(--white-color); */
+}
+
+/******************** Login Form ********************/
+.form-login{
+    position: absolute;
+    width: 420px;
+    background-color: hsla(0, 0%, 10%, 0.1);
+    border: 2px solid var(--white-color);
+    margin-inline: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(8px);
+    transition: .5s ease-in-out;
+    opacity: 1;
+    left: 20px;
+}
+
+h1{
+    text-align: center;
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: 2rem;
+}
+
+.login-input-box {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    column-gap: 0.75rem;
+    border-bottom: 2px solid var(--white-color);
+    margin-bottom: .5rem;
+}
+
+.input-box {
+    position: relative;
+}
+
+.login-input {
+    width: 100%;
+    padding-block: 0.8rem;
+    background: none;
+    color: var(--white-color);
+    position: relative;
+}
+
+.login-label {
+    position: absolute;
+    left: 0;
+    top: 13px;
+    font-weight: var(--font-medium);
+    transition: top 0.3s, font-size 0.3s;
+}
+
+.login-i, .pass-eye {
+    font-size: 1.25rem;
+}
+
+.pass-eye {
+    position: absolute;
+    right: 0;
+    top: 18px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.login-input-box:nth-child(2) .login-input {
+    padding-right: 2rem;
+}
+
+.login-forgot {
+    font-size: var(--small-font-size);
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.login-forgot:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--white-color);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.login-register {
+    text-align: center;
+    font-size: var(--small-font-size);
+    color: var(--white-color);
+}
+
+.login-register a {
+    color: var(--white-color);
+    font-weight: var(--font-medium);
+    font-weight: bold;
+}
+
+/* Input focus move up label */
+.login-input:focus + .login-label {
+    top: -6px;
+    font-size: var(--small-font-size);
+}
+  
+/* Input focus sticky top label */
+.login-input:not(:placeholder-shown).login-input:not(:focus) + .login-label {
+    top: -6px;
+    font-size: var(--small-font-size);
+}
+
+/******************** Sign Form ********************/
+.form-sign{
+    position: absolute;
+    width: 420px;
+    background-color: hsla(0, 0%, 10%, 0.1);
+    border: 2px solid var(--white-color);
+    margin-inline: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(8px);
+    transition: .5s ease-in-out;
+    opacity: 0;
+    right: -520px;
+}
+
+#repass-box {
+    margin-bottom: 1.5rem;
+}
+/*=============== BREAKPOINTS ===============*/
