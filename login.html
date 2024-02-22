@@ -10,7 +10,7 @@
         <!--========== REMIXICONS ==========-->
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-        <title>Coup2Pouce</title>
+        <title>Coup2Pouce - Login</title>
     </head>
     <body>
         <div class="container">
@@ -20,35 +20,35 @@
                     <div class="login-input-box">
                         <i class="ri-user-3-line login-i"></i>
                         <div class="input-box">
-                            <input type="email" class="login-input" id="login-email" placeholder=" ">
+                            <input type="email" class="login-input" id="login-email" placeholder=" " required>
                             <label for="login-email" class="login-label">Email</label>
                         </div>
                     </div>
                     <div class="login-input-box">
                         <i class="ri-lock-2-line login-i"></i>
                         <div class="input-box">
-                            <input type="password" class="login-input" id="login-pass" placeholder=" ">
+                            <input type="password" class="login-input" id="login-pass" placeholder=" " required>
                             <label for="login-pass" class="login-label">Mot de passe</label>
                             <i class="ri-eye-off-line pass-eye" id="pass-eye"></i>
                         </div>
                     </div>
-                    <div class="login-forgot"><a href="#" class="login-forgot">Mot de passe oublié?</a></div>
+                    <div class="login-forgot"><a href="#" class="login-forgot">Mot de passe oublié ?</a></div>
                     <button type="submit" class="login-button">Se connecter</button>
-                    <p class="login-register">As-tu un compte ? <a href="#" onclick="Register()"> Crée-en un</a></p>
+                    <p class="login-register">Tu n'as pas de compte ? <a href="#" onclick="Register()"> Crée-en un</a></p>
                 </form>
                 <form action="" class="form-sign" id="register">
                     <h1>Créer votre compte</h1>
                     <div class="login-input-box">
                         <i class="ri-user-3-line login-i"></i>
                         <div class="input-box">
-                            <input type="email" class="login-input" id="register-email" placeholder=" ">
+                            <input type="email" class="login-input" id="register-email" placeholder=" " required>
                             <label for="register-email" class="login-label">Email</label>
                         </div>
                     </div>
                     <div class="login-input-box">
                         <i class="ri-lock-2-line login-i"></i>
                         <div class="input-box">
-                            <input type="password" class="login-input" id="register-pass" placeholder=" ">
+                            <input type="password" class="login-input" id="register-pass" placeholder=" " required>
                             <label for="register-pass" class="login-label">Mot de passe</label>
                             <i class="ri-eye-off-line pass-eye" id="register-pass-eye"></i>
                         </div>
@@ -56,7 +56,7 @@
                     <div class="login-input-box" id="repass-box">
                         <i class="ri-lock-2-line login-i"></i>
                         <div class="input-box">
-                            <input type="password" class="login-input" id="register-repass" placeholder=" ">
+                            <input type="password" class="login-input" id="register-repass" placeholder=" " required>
                             <label for="register-repass" class="login-label">Confirmation du mot de passe</label>
                             <i class="ri-eye-off-line pass-eye" id="register-repass-eye"></i>
                         </div>
