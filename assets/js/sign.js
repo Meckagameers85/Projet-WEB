@@ -98,6 +98,4 @@ function Add_site() {
     alert("Ajouter un site");
 }
 
-// Afficher(index,"left",Tab("error"));
-Afficher(index = 3,"left",Tab("Etudiant"));
-
+Afficher(index,"left",Tab("error"));
