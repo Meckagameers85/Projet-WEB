@@ -98,4 +98,4 @@ function Add_site() {
     alert("Ajouter un site");
 }
 
-Afficher(index,"left",Tab("error"));
+Afficher(index,"left",Tab("error")); // Lancement de la page de choix de type de compte
