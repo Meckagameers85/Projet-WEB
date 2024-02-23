@@ -1,0 +1,315 @@
+<!-- sign.html -->
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="assets/css/sign.css">
+        
+        <!--========== REMIXICONS ==========-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <title>Coup2Pouce - Login</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="container-form">
+                <form action="" class="form form-type" id="form-Type">
+                    <h1>Qui êtes vous ?</h1>
+                    <div class="register-input-box">
+                        <i class="ri-list-check register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-type" required>
+                                <option value="error" id="opt-error" selected disabled>Type de compte</option>
+                                <option value="Entreprise">Entreprise</option>
+                                <option value="Pilote">Pilote</option>
+                                <option value="Etudiant">Etudiant</option>
+                            </select>
+                        </div>
+                    </div>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next_Type()">Suivant</button>
+                </form>
+
+    <!-- Formulaire Entreprise -->            
+                <form action="" class="form form-type" id="form-Entreprise">
+                    <h1>Votre compte<br>Entreprise</h1>
+                    <div class="register-input-box">
+                        <i class="ri-user-3-line register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-firm-name" placeholder=" " required>
+                            <label for="register-firm-name" class="register-label">Nom de l’entreprise</label>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-list-check register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-Sector" required>
+                                <option id="opt-sector" selected disabled>Secteur d’activité</option>
+                            </select>
+                        </div>
+                    </div>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Entreprise')">Suivant</button>
+                    <p onclick="Previous('Entreprise')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+
+                <form action="" class="form form-type" id="form-Entreprise-address">
+                    <h1>Votre compte<br>Entreprise</h1>
+                    <p class="sub-title">Rentrer l’adresse de votre siège</p>
+                    <div class="register-input-box">
+                        <i class="ri-earth-line register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-country" placeholder=" " required>
+                            <label for="register-country" class="register-label">Pays</label>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-hotel-line register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-CP" placeholder=" " required>
+                            <label for="register-CP" class="register-label">Code Postal</label>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-database-line register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-city" required>
+                                <option id="opt-city" selected disabled>Ville</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-map-pin-2-fill register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-address" placeholder=" " required>
+                            <label for="register-address" class="register-label">Adresse</label>
+                        </div>
+                    </div>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Entreprise')">Suivant</button>
+                    <p onclick="Previous('Entreprise')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+
+                <form action="" class="form form-type" id="form-Entreprise-locality">
+                    <h1>Votre compte<br>Entreprise</h1>
+                    <p class="sub-title">Votre localité</p>
+                    <div class="register-input-box">
+                        <i class="ri-building-4-line register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-Entreprise-type" required>
+                                <option id="opt-Entreprise-type" selected disabled>Type d'Entreprise</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="sub-title-mid">Vos autres sites</p>
+                    <div class="site-box">
+                        <div class="label-site-box">
+                            <p class="label-title-site">Vos sites :</p>
+                            <p class="label-site">CESI La Rochelle</p>
+                            <p class="label-site">CESI Nantes</p>
+                        </div>
+                        <i class="ri-map-pin-add-line site-i" onclick="Add_site()"></i>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-hotel-line register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-Site-CP" placeholder=" " required>
+                            <label for="register-Site-CP" class="register-label">Code Postal</label>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-database-line register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-Site-city" required>
+                                <option id="opt-Site-city" selected disabled>Ville</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-map-pin-2-fill register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-Site-address" placeholder=" " required>
+                            <label for="register-Site-address" class="register-label">Adresse</label>
+                        </div>
+                    </div>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Entreprise')">Suivant</button>
+                    <p onclick="Previous('Entreprise')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+
+                <form action="" class="form form-type" id="form-Entreprise-All">
+                    <h1>Votre compte<br>Entreprise</h1>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Entreprise')">Création</button>
+                    <p onclick="Previous('Entreprise')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+
+    <!-- Formulaire Pilote -->           
+                <form action="" class="form form-type" id="form-Pilote">
+                    <h1>Votre compte<br>Pilote</h1>
+                    <div class="register-input-box">
+                        <i class="ri-user-3-line register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-Pilote-name" placeholder=" " required>
+                            <label for="register-Pilote-name" class="register-label">Nom</label>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-user-3-line register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-Pilote-surname" placeholder=" " required>
+                            <label for="register-Pilote-surname" class="register-label">Prénom</label>
+                        </div>
+                    </div>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Pilote')">Suivant</button>
+                    <p onclick="Previous('Pilote')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+
+                <form action="" class="form form-type" id="form-Pilote-address">
+                    <h1>Votre compte<br>Pilote</h1>
+                    <p class="sub-title">Lieu de travail</p>
+                    <div class="register-input-box">
+                        <i class="ri-hotel-line register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-Pilote-CP" placeholder=" " required>
+                            <label for="register-Pilote-CP" class="register-label">Code Postal</label>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-database-line register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-Pilote-city" required>
+                                <option id="opt-Pilote-city" selected disabled>Ville</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-building-4-line register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-Pilote-campus" required>
+                                <option id="opt-Pilote-campus" selected disabled>Votre campus</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="sub-title-mid">Promotion à charge</p>
+                    <div class="register-input-box">
+                        <i class="ri-team-line register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-Pilote-promo" required>
+                                <option id="opt-Pilote-promo" selected disabled>Promotion</option>
+                            </select>
+                        </div>
+                    </div>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Pilote')">Suivant</button>
+                    <p onclick="Previous('Pilote')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+
+                <form action="" class="form form-type" id="form-Pilote-All">
+                    <h1>Votre compte<br>Pilote</h1>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Pilote')">Création</button>
+                    <p onclick="Previous('Pilote')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+
+    <!-- Formulaire Etudiant -->
+                <form action="" class="form form-type" id="form-Etudiant">
+                    <h1>Votre compte<br>Etudiant</h1>
+                    <div class="register-input-box">
+                        <i class="ri-user-3-line register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-Student-name" placeholder=" " required>
+                            <label for="register-Student-name" class="register-label">Nom</label>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-user-3-line register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-Student-surname" placeholder=" " required>
+                            <label for="register-Student-surname" class="register-label">Prénom</label>
+                        </div>
+                    </div>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Etudiant')">Suivant</button>
+                    <p onclick="Previous('Etudiant')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+                
+                <form action="" class="form form-type" id="form-Student-address">
+                    <h1>Votre compte<br>Etudiant</h1>
+                    <p class="sub-title">Lieu d’étude</p>
+                    <div class="register-input-box">
+                        <i class="ri-hotel-line register-i"></i>
+                        <div class="input-box">
+                            <input type="text" class="register-input" id="register-Student-CP" placeholder=" " required>
+                            <label for="register-Student-CP" class="register-label">Code Postal</label>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-database-line register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-Student-city" required>
+                                <option id="opt-Student-city" selected disabled>Ville</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="register-input-box">
+                        <i class="ri-building-4-line register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-Student-campus" required>
+                                <option id="opt-Student-campus" selected disabled>Votre campus</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="sub-title-mid">Votre promotion</p>
+                    <div class="register-input-box">
+                        <i class="ri-team-line register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-Student-promo" required>
+                                <option id="opt-Student-promo" selected disabled>Promotion</option>
+                            </select>
+                        </div>
+                    </div>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Etudiant')">Suivant</button>
+                    <p onclick="Previous('Etudiant')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+                
+                <form action="" class="form form-type" id="form-Student-skills">
+                    <h1>Votre compte<br>Etudiant</h1>
+                    <div class="register-input-box">
+                        <i class="ri-compasses-2-line register-i"></i>
+                        <div class="input-box">
+                            <select class="register-input" id="register-Student-Skill" required>
+                                <option id="opt-Student-Skill" selected disabled>Compétences</option>
+                                <option value="Team-work">Travail en équipe</option>
+                                <option value="Autonome">Autonome</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="skills-box">
+                        <p class="label-title-skills">Vos Compétences :</p>
+                        <p class="label-skills">Travail en équipe</p>
+                        <p class="label-skills">Autonome</p>
+                    </div>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Etudiant')">Suivant</button>
+                    <p onclick="Previous('Etudiant')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+
+                <form action="" class="form form-type" id="form-Etudiant-All">
+                    <h1>Votre compte<br>Etudiant</h1>
+                    <progress max="100" class="Progress-bar" value="0"></progress>
+                    <button type="button" class="button" onclick="Next('Etudiant')">Création</button>
+                    <p onclick="Previous('Etudiant')" style="text-align: center; color: rgba(255, 255, 255, 0);"><-----</p>
+                </form>
+            </div>
+        </div>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/sign.js"></script>
+    </body>
+</html>
